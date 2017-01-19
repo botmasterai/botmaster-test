@@ -21,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/botmasterai/botmaster-test/issues"
   },
-  "homepage": "https://github.com/botmasterai/botmaster-test#readme"
+  "homepage": "https://github.com/botmasterai/botmaster-test#readme",
+  "dependencies": {
+    "botmaster": "^2.2.3",
+    "debug": "^2.6.0",
+    "nock": "^9.0.2",
+    "supertest": "^2.0.1"
+  }
 }

@@ -1,7 +1,7 @@
 const nock = require('nock');
 const request = require('supertest');
 const Botmaster = require('botmaster');
-const debug = require('debug')('botmaster:fulfill:test');
+const debug = require('debug')('botmaster:test');
 
 const telegramToken = 'abc';
 const telegramWebhookEndpoint = '/boo124/';
