@@ -2,7 +2,7 @@
   "name": "botmaster-test",
   "version": "0.0.3",
   "description": "test utility for end to end testing with botmaster",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "mkdir -p dist && babel --presets=es2015,babili src --out-dir dist",
