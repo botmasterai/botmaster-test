@@ -28,8 +28,8 @@ const telegramNock = () => nock(`https://api.telegram.org/bot${telegramToken}`).
 
 /**
  * have bot master response done with a text. Chain it by calling it response(botmaster)(text)
- * @param  {object} botmaster botmaster to work with
- * @param  {String} text bot text to send
+ * @param  {object} botmaster - botmaster to work with
+ * @param  {String} text - bot text to send
  */
 const respond = botmaster => text =>
     botmaster.once( 'update', bot => bot.sendMessage(incomingUpdate(text)));
@@ -53,9 +53,9 @@ const incomingMessage = (text = 'hi') => ({
 });
 
 /**
- * [incomingUpdate description]
- * @param  {String} text       optional- the bots text
- * @return {Object}            mock botmaster update after update handler
+ * generate an incoming update
+ * @param  {String} [text] - the bots text
+ * @return {Object}  mock botmaster update after update handler
  */
 const incomingUpdate = (text = 'the users test' )=> ({
     raw: 'some raw object data',
@@ -74,9 +74,9 @@ const incomingUpdate = (text = 'the users test' )=> ({
 });
 
 /**
- * [outgoingMessage description]
- * @param  {String} text       optional- the bots text
- * @return {Object}            message to send with bot.sendMessage
+ * generate an outgoing message
+ * @param  {String} [text] - the bots text
+ * @return {Object} message to send with bot.sendMessage
  */
 const outgoingMessage = (text = 'the bots text') => ({
     recipient: {
@@ -89,16 +89,16 @@ const outgoingMessage = (text = 'the bots text') => ({
 
 /**
  * A chainable mock for telegram that can send and expect messages. Construct it by calling it with these params.
- * @param  {Object} botmaster             the botmaster object being tested. we use this to get the app for use with supertest.
- * @param  {Object} mock                  optional - a nock scope
- * @return {Object}                       mock object with methods
+ * @param  {Object} botmaster - the botmaster object being tested. we use this to get the app for use with supertest.
+ * @param  {Object} [mock] - a nock scope
+ * @return {Object}  mock object with methods
  */
 const telegramMock = (botmaster, mock = telegramNock() ) => ({
     /**
      * mock telegram sending botmaster an update
-     * @param  {object}   update telegram update
-     * @param  {Function} cb     error-first callback with response object from botmaster
-     * @return {Object}          the telegraMock object for chaining
+     * @param  {object}   update  - telegram update
+     * @param  {Function} cb - error-first callback with response object from botmaster
+     * @return {Object}  the telegraMock object for chaining
      */
     sendUpdate: (update, cb) => {
         request(botmaster.app)
