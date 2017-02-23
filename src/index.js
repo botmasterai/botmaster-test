@@ -1,6 +1,7 @@
 const {botmaster} = require('./botmaster');
 const {
     incomingUpdate,
+    incomingMessage,
     outgoingMessage,
     telegramBot,
     telegramMock,
