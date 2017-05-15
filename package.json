@@ -1,6 +1,6 @@
 {
   "name": "botmaster-test",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "test utility for end to end testing with botmaster",
   "main": "dist/index.js",
   "scripts": {
