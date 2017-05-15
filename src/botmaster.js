@@ -1,7 +1,6 @@
 const Botmaster = require('botmaster');
-
+const TelegramBot = require('botmaster-telegram')
 const {telegramSettings} = require('./telegram');
-const { TelegramBot } = require('botmaster-telegram')
 
 const botmaster = () => new Promise( (resolve, reject) => {
     const botmaster = new Botmaster();
